@@ -18,4 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^index/$', 'blog.views.index'),
+    url(r'^register/$', 'blog.views.register'),
+    url(r'^list/$', 'blog.views.list'),    
 ]
