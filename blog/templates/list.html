@@ -2,11 +2,12 @@
 	this is block content in index.html
   {% block content %}
   	{{ base }}
+  		
       {% for demo in l_demo %}
-      <h2>{{  demo.title }}</h2>
+      <h2><a href = "/blog/{{ demo.seq }}">{{  demo.title }}</a></h2>
       <p>{{ demo.timestamp | date:"1,F jS"}}</p>
-      <p>{{ demo.desc }}</p>
-      <p>{{ demo.seq }}</p>
+      <p>Package:{{ demo.pkg }}</p>
+       <p>{{ demo.desc }}</p>
       
      
       {% endfor %}

@@ -21,7 +21,7 @@ class Demo(models.Model):
     seq = models.AutoField(primary_key = True)
     #title = models.CharField
     title = models.CharField(max_length = 100,default = "new show")
-    pkg = models.FileField("Package",upload_to="./pkgs")
+    pkg = models.FileField("Package",upload_to="./demos")
     desc = models.TextField(default = u"更新描述：")
     
     timestamp = models.DateTimeField()
@@ -84,7 +84,7 @@ def makeQR(sender, instance,  **kwargs):
                      border=4, )
     qr.add_data("http://sina.com")
     img=qr.make_image()
-    qr_path=settings.MEDIA_ROOT+"/"+ str(instance.seq)+".png"
+    qr_path=settings.MEDIA_ROOT+"/qr/"+ str(instance.seq)+".png"
     img.save(qr_path)
     #instance.qr = path
     #instance.save()

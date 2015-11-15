@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+	this is block content in index.html
+  {% block content %}
+  
+  
+  
+  	{{ base }}
+      
+      <h2>{{  demo.title }}</h2>
+      <p>{{ demo.timestamp | date:"1,F jS"}}</p>
+      <p>{{ demo.desc }}</p>
+      <img src= "{{ upload_base }}/qr/{{ demo.seq }}.png" alt ="{{ demo.title }}的二维码"/>
+      url="{{ upload_base }}/qr/{{ demo.seq }}.png"
+     
+  {% endblock %}

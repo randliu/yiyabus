@@ -11,6 +11,7 @@ from django import forms
 from django.http import HttpResponse
 
 base=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import yiyabus
 # Create your views here.
 def index(request):
     blog_list = BlogsPost.objects.all()
@@ -23,6 +24,10 @@ def index(request):
 def list(request):
     l_demo = Demo.objects.all()
     return render_to_response("list.html",{"l_demo":l_demo})
+
+def blog(request ,seq):
+    demo = Demo.objects.get(seq=seq)
+    return render_to_response("blog.html",{"demo":demo,"upload_base": yiyabus.settings.MEDIA_URL})
 
 # Create your views here.
 class UserForm(forms.Form):

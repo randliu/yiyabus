@@ -25,6 +25,7 @@ SECRET_KEY = 'p&=h=!&_htrha)!5(ijbg$4c@o4mlbue2md+$fg=_q-r%i-=6%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 
@@ -102,6 +103,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT =  '/Users/rand/Documents/git/yiyabus/pkgs'
-MEDIA_URL = '/site_media/' 
+MEDIA_ROOT =  '/Users/rand/Documents/git/yiyabus/media'
+MEDIA_URL =  "/media/"
+#'/site_media/' 
 

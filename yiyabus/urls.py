@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^index/$', 'blog.views.index'),
     url(r'^register/$', 'blog.views.register'),
     url(r'^list/$', 'blog.views.list'),    
+    url(r'^blog/(\d+)/$', 'blog.views.blog'),    
 ]
