@@ -22,7 +22,7 @@ def index(request):
 
 
 def list(request):
-    l_demo = Demo.objects.all()
+    l_demo = Demo.objects.all().order_by('-seq')
     return render_to_response("list.html",{"l_demo":l_demo})
 
 def blog(request ,seq):

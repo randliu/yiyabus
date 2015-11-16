@@ -39,7 +39,7 @@ class QRUrl(models.Model):
     #    stock   =   models.ForeignKey(Stock)
 
     demo =models.OneToOneField(Demo)
-admin.site.register(QRUrl)
+#admin.site.register(QRUrl)
 
 class BlogsPost(models.Model):
     title = models.CharField(max_length = 150)
@@ -62,7 +62,7 @@ class DemoAdmin(admin.ModelAdmin):
 
     list_display= ('title','seq')
     
-admin.site.register(BlogsPost,BlogPostAdmin)
+#admin.site.register(BlogsPost,BlogPostAdmin)
 admin.site.register(User)
 admin.site.register(Demo,DemoAdmin)
 
@@ -82,7 +82,7 @@ def makeQR(sender, instance,  **kwargs):
                      error_correction=qrcode.constants.ERROR_CORRECT_H,     
                      box_size=10,     
                      border=4, )
-    qr.add_data("http://sina.com")
+    qr.add_data("http://112.74.14.144/media/"+str(instance.pkg))
     img=qr.make_image()
     qr_path=settings.MEDIA_ROOT+"/qr/"+ str(instance.seq)+".png"
     img.save(qr_path)
