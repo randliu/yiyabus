@@ -89,10 +89,10 @@ def makeQR(sender, instance,  **kwargs):
     #instance.qr = path
     #instance.save()
     #instance.qr.url=
-    url=QRUrl()
-    url.demo=instance
-    url.url=qr_path
-    url.save()
+    #url=QRUrl()
+    #url.demo=instance
+    #url.url=qr_path
+    #url.save()
 post_save.connect(makeQR, sender=Demo)
 
     

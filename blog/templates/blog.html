@@ -9,7 +9,6 @@
       <h2>{{  demo.title }}</h2>
       <p>{{ demo.timestamp | date:"1,F jS"}}</p>
       <p>{{ demo.desc }}</p>
-      <img src= "{{ upload_base }}/qr/{{ demo.seq }}.png" alt ="{{ demo.title }}的二维码"/>
-      url="{{ upload_base }}/qr/{{ demo.seq }}.png"
-     
+      <img src= "http://112.74.14.144/media/qr/{{ demo.seq }}.png" alt ="{{ demo.title }}的二维码"/>
+      <a href ="http://112.74.14.144/media/{{ demo.pkg }}" > 点击下载 </a>
   {% endblock %}
