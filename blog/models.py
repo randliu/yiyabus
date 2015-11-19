@@ -20,14 +20,14 @@ class User(models.Model):
 class Demo(models.Model):
     seq = models.AutoField(primary_key = True)
     #title = models.CharField
-    title = models.CharField(max_length = 100,default = "new show")
-    pkg = models.FileField("Package",upload_to="./demos")
-    desc = models.TextField(default = u"更新描述：")
+    title = models.CharField(u"体验主题",max_length = 100,default = "new show")
+    pkg = models.FileField(u"安装包",upload_to="./demos")
+    desc = models.TextField(u"更新描述",default = u"体验点：")
     
-    timestamp = models.DateTimeField()
+    #timestamp = models.DateTimeField()
     
-    count = models.IntegerField(default = 0)
-    version = models.CharField(max_length = 30,default = "2.2.0")
+    #count = models.IntegerField(default = 0)
+    version = models.CharField(u"版本",max_length = 30,default = "2.2.0")
 
     #qr  =   models.URLField(default=u"http://不要编辑我.com")
     #qr = QRUrl
@@ -63,7 +63,7 @@ class DemoAdmin(admin.ModelAdmin):
     list_display= ('title','seq')
     
 #admin.site.register(BlogsPost,BlogPostAdmin)
-admin.site.register(User)
+#admin.site.register(User)
 admin.site.register(Demo,DemoAdmin)
 
 
